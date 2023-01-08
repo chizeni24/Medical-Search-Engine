@@ -46,8 +46,8 @@ nltk.download('punkt')
 # In[4]:
 
 
-df=pd.read_csv('Dimension-covid.csv')   #for preprocessing
-df1=pd.read_csv('Dimension-covid.csv')  #for returning results
+df=pd.read_csv('input/Dimension-covid.csv')   #for preprocessing
+df1 = pd.read_csv('input/Dimension-covid.csv')  # for returning results
 
 
 # # Preprocessing data 
@@ -105,8 +105,8 @@ def preprocessing(text):
     return text
 
 
-skipgram = Word2Vec.load('skipgramx11.bin')
-FastText=Word2Vec.load('FastText.bin')
+skipgram = Word2Vec.load('output/model_Skipgram.bin')
+FastText=Word2Vec.load('output/model_Fasttext.bin')
 
 
 
@@ -116,7 +116,7 @@ FastText=Word2Vec.load('FastText.bin')
 vector_size=100   #defining vector size for each word
 
 
-
+# Calculate the mean Vector 
 def get_mean_vector(word2vec_model, words):
     # remove out-of-vocabulary words
     words = [word for word in tokenize(words) if word in list(word2vec_model.wv.index_to_key)]
@@ -127,16 +127,16 @@ def get_mean_vector(word2vec_model, words):
 
 
 
-
-K=pd.read_csv('skipgram-vec.csv')   
+# Read the Skipgram embedding for abstract 
+K=pd.read_csv('Data/skipgram-vec.csv')   
 
 K2=[]                          
 for i in range(df.shape[0]):
     K2.append(K[str(i)].values)
 
 
-
-KK=pd.read_csv('FastText-vec.csv')
+# Read the FastText embedding for the abstract 
+KK=pd.read_csv('Data/FastText-vec.csv')
 
 K1=[]
 for i in range(df.shape[0]):
@@ -146,6 +146,8 @@ for i in range(df.shape[0]):
 
 from numpy import dot
 from numpy.linalg import norm
+
+# Cosing similary Functions
 def cos_sim(a,b):
 
     return dot(a, b)/(norm(a)*norm(b)) 
@@ -191,7 +193,7 @@ def main():
    
         
             return K   
-
+    # Get the top 10 results using cosine similarity
     def top_n(query,p,df1):
         
         
