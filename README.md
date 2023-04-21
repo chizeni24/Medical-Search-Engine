@@ -4,7 +4,7 @@
 This project aims to create domain-specific medical word embeddings using Word2Vec and FastText in Python to develop a search engine and Streamlit UI. Embeddings are a feature learning technique that maps words or phrases to vectors of real numbers, enabling the representation of words as semantically meaningful dense vectors. This method overcomes many of the problems of other techniques like one-hot encodings and TFIDF. In this project, Word2Vec and FastText are used to build the models that represent distributed representations of words in a corpus. The search engine and Streamlit UI can help medical professionals and the public access accurate and relevant information about medical topics.
 
 ## Data description
-The project will be based on a clinical trials dataset related to Covid-19, which can be accessed from the provided [link](https://dimensions.figshare.com/articles/dataset/Dimensions_COVID-19_publications_datasets_and_clinical_trials/11961063). The dataset contains 10666 rows and 21 columns of data. The project will focus on two essential columns of the dataset:
+The project will be based on a clinical trials dataset related to Covid-19, which can be accessed from the provided [link](https://chizeni24-medical-search-engine-medical-5hks9o.streamlit.app/). The dataset contains 10666 rows and 21 columns of data. The project will focus on two essential columns of the dataset:
 - Title 
 - Abstract
 
