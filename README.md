@@ -1,4 +1,4 @@
-# Medical-Search-Engine
+# [Medical-Search-Engine](https://chizeni24-medical-search-engine-medical-5hks9o.streamlit.app/)
 
 ## Objective
 This project aims to create domain-specific medical word embeddings using Word2Vec and FastText in Python to develop a search engine and Streamlit UI. Embeddings are a feature learning technique that maps words or phrases to vectors of real numbers, enabling the representation of words as semantically meaningful dense vectors. This method overcomes many of the problems of other techniques like one-hot encodings and TFIDF. In this project, Word2Vec and FastText are used to build the models that represent distributed representations of words in a corpus. The search engine and Streamlit UI can help medical professionals and the public access accurate and relevant information about medical topics.
